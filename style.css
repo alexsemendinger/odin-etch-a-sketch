@@ -1,0 +1,20 @@
+.etch-a-sketch {
+    display: flex;
+    flex-direction: column;
+}
+
+.etch-row {
+    display: flex;
+}
+
+.cell {
+    height: 25px;
+    width: 25px;
+    background-color: lightgray;
+    border: 1px solid darkgray;
+    box-sizing: border-box;
+}
+
+.cell.colored-in {
+    background-color: #444444;
+}
