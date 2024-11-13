@@ -1,5 +1,5 @@
 
-let gridSize = 20;
+let gridSize = 25;
 const etchASketchContainer = document.querySelector("#etch-a-sketch");
 
 const resetButton = document.querySelector("#reset")
@@ -8,7 +8,7 @@ const resizeButton = document.querySelector("#resize")
 resetButton.addEventListener("click", () => resetGrid(gridSize))
 
 resizeButton.addEventListener("click", () => {
-    gridSize = prompt("Enter a new grid size");
+    gridSize = prompt("Enter a new grid size (max 50)");
     resetGrid(gridSize);
 });
 
@@ -43,6 +43,7 @@ function resetGrid (gridSize) {
             etchASketchContainer.removeChild(child);
         }
     }
+    gridSize = Math.min(50, gridSize);
     etchASketch = createGrid(gridSize);
     etchASketchContainer.appendChild(etchASketch);
 }
