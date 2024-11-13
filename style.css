@@ -1,6 +1,85 @@
-.etch-a-sketch {
+.etch-border p {
+    margin-block-start: 0px;
+    margin-block-end: 8px;
+    margin-top: -40px;
+}
+
+body {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 24px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e22a2a;
+    color: gold;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+button:hover {
+    background-color: #cc0000;
+}
+
+.etch-border {
+    background-color: #e80000;
+    padding: 60px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    margin-top: 20px;
+    position: relative;
+}
+
+.etch-border {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: 'Brush Script MT', 'Arial Black', sans-serif;
+    font-size: 60px;
+    color: gold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Knobs */
+.etch-border::before,
+etch-border::after {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 50%;
+    bottom: 5px;
+    right: 20px;
+}
+
+.etch-border::after {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 50%;
+    bottom: 5px;
+    left: 20px;
+}
+
+#etch-a-sketch {
+    display: flex;
+    flex-direction: column;
+    background-color: #e0e0e0;
+    padding: 10px;
+    border: 15px solid #cc0000;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
 }
 
 .etch-row {
@@ -8,13 +87,14 @@
 }
 
 .cell {
-    height: 25px;
-    width: 25px;
-    background-color: lightgray;
-    border: 1px solid darkgray;
+    height: 20px;
+    width: 20px;
+    background-color: #f8f8f8;
+    border: 1px solid #e0e0e0;
     box-sizing: border-box;
+    transition: background-color 0.1s ease;
 }
 
 .cell.colored-in {
-    background-color: #444444;
+    background-color: #333333;
 }
